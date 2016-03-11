@@ -1,0 +1,314 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>HTML básico, primera parte</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+  </head>
+  <body>
+    <h1>¿Qué es HTML?</h1>
+    <p>!DOCTYPE define el tipo de documento (html, xml, etc). Es necesario para que el navegador muestre la página correctamente.</p>
+    <p>El texto entre los tags "html" describe la página web en sí.</p>
+    <p>El texto entre los tags "body" es el contenido visible de la página.</p>
+    <p>HTML "Lenguaje de marcado de hipertexto". Un lenguaje de marcado ("ml") es un cjto de "tags" de marcado</p>
+    <p style="text-wrap: avoid;">Las tags o etiquetas describen el contenido del documento. Los documentos HTML tienen tags y texto plano. 
+    También se les llama "páginas web". Los tags normalmente van por pares de apertura (&lt;tag&gt;)y de cierre (&lt;/tag&gt;).
+    Los elementos HTML son lo que hay entre dos tags. (Aunque a veces se llama igual tags que elementos para ambos). 
+    Siempre usar tags en minúsculas.</p>
+
+    <p>
+      Los <b>tags de bloque o elementos de bloque</b> suelen empezar en una línea nueva en el navegador.
+      Son, por ejemplo, las cabeceras "h", párrafos "p", listas "ul,ol", tablas "table", etc.<br />
+      Los <b>tags "inline" (en línea o dentro de línea)</b> se muestran en el navegador sin saltar de línea. Ejemplos:
+      Modificadores de texto como negrita "b", cabeceras o casillas de tablas "th ó td", enlaces o anchors "a", imágenes "img", etc.
+    </p>
+    <p>Las cabeceras:</p>
+    <p>Para HTML 5: &lt;!DOCTYPE html&gt;</p>
+    <p>Para HTML 4.01: &lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+    "http://www.w3.org/TR/html4/loose.dtd"&gt; (o strict en su caso).</p>
+    <p>Para XHTML 1.0: &lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;</p>
+    <hr />
+    <!--===================================================================================-->
+    <h1>Cositas básicas</h1>
+    <p>&lt;a href="dirección web"&gt;Esto es un enlace&lt;/a&gt;</p>
+    
+    <p>&lt;img src="ruta web y nombre de la imagen" width="ancho" heigth="alto" 
+    alt="texto informativo/alternativo" /&gt;. Los tags tienen atributos, un ejemplo de su
+    uso son src, width, heigth, href,... Los atributos SIEMPRE entre comillas("") y en minúsculas.</p>
+    
+    <p>&lt;br&gt; Salto de línea, este tag no está cerrado. La versión cerrada es &lt;br /&gt;. Hay que cerrarlo todo, xq si no,
+    en XHTML, no se permiten tags abiertos y reventón!!!XD</p>
+    
+    <p>&lt;hr /&gt; Esto hace una línea horizontal:</p> <hr />
+    <p>&lt;!-- comentario --&gt; Esto es un comentario</p>
+    
+    <p>&lt;b&gt;negrita&lt;/b&gt; &lt;i&gt;cursiva&lt;/i&gt; &lt;big&gt;un poco mayor&lt;/big&gt; 
+    &lt;small&gt;un poco menor&lt;/small&gt; &lt;strong&gt;fuerte&lt;/strong&gt; &lt;em&gt;enfatizada&lt;/em&gt;
+    &lt;code&gt;letra código de terminal&lt;/code&gt; &lt;sup&gt;superíndice&lt;/sup&gt; &lt;sub&gt;subíndice&lt;/sub&gt;</p>
+    
+    <p><b>negrita</b> <i>cursiva</i> <big>un poco mayor</big> 
+    <small>un poco menor</small> <strong>fuerte</strong> <em>enfatizada</em>
+    <code>letra código de terminal</code> <sup>superíndice</sup> <sub>subíndice</sub></p>
+
+    <p>En realidad hay más modificadores para el texto que en la guerra, están todos en 
+    <a href="http://www.w3schools.com/html/html_formatting.asp">este enlace de la w3schools</a>.</p>
+    <p>&lt;a href="http://www.w3schools.com/" target="_blank"&gt;Este enlace se abre en una nueva ventana/pestaña.&lt;/a&gt;</p>
+    <p><a href="http://www.w3schools.com/" target="_blank">Este enlace se abre en una nueva ventana/pestaña</a>.</p>
+    <p>&lt;a name="ancla"&gt;Esto es un "ancla" o etiqueta de referencia al lugar donde aparece.&lt;/a&gt;</p>
+    <p><a name="ancla">Esto es un "ancla" ("anchor") o etiqueta de referencia al lugar donde aparece.</a></p>
+    <p>&lt;a href="#ancla"&gt;Esto es un enlace al lugar donde aparece el anchor "ancla" en esta misma página.&lt;/a&gt;</p>
+    <p><a href="#ancla">Esto es un enlace al lugar donde aparece el anchor "ancla" en esta misma página.</a></p>
+    <p>&lt;a href="dirección web#ancla"&gt;Esto es un enlace al lugar donde aparece el anchor "ancla" en otra página.&lt;/a&gt;</p>
+    <p>SIEMPRE hay que poner la barra "/" al final de una dirección web, si no el navegador es tonto y la busca dos veces.</p>
+    
+    <p>Para poner un link en una imagen, simplemente metemos el tag "image" dentro de un tag "a", y este a su vez dentro de un tag
+    "p" o algún tipo de encabezado.</p>
+    
+    <p>Link de correo: &lt;a href="mailto:coreo@proveedor.com?Subject=título"&gt;Manda un correo!&lt;/a&gt;</p>
+    <p>Link de correo: <a href="mailto:coreo@proveedor.com?Subject=título%20pepón">Manda un correo!</a></p>
+    
+    <p>Mandar un emali con todo puesto ya:
+    <a href="mailto:someone@example.com?cc=someoneelse@example.com&bcc=andsomeoneelse@example.com&subject=Summer%20Party&body=You%20are%20invited%20to%20a%20big%20summer%20party!">
+    Manda este email completo!</a></p>
+    <hr />
+    <!--===================================================================================================-->
+    <h1>Partes del tag &lt;head&gt;</h1>
+    <p>Tiene cosas del documento que no se ven. Puede contener estos tags:</p>
+    <p>&lt;title&gt;, &lt;base,&gt;, &lt;link&gt;, &lt;meta&gt;, &lt;script&gt;, &lt;style&gt;.</p>
+    
+    <p>Tag &lt;title&gt;: Define el título de la página en el navegador, al añadirla a favoritos y en los motores de búsqueda.
+    Uso: &lt;title&gt;"texto del título"&lt;/title&gt;</p>
+    
+    <p>Tag &lt;base&gt;: Define un objetivo o dirección web por defecto para todos los links de la página.
+    Uso: &lt;base href="http://www.w3schools.com/images/" /&gt; ó &lt;base target="_blank" /&gt;</p>
+    
+    <p>Tag &lt;link&gt;: Define una relación o vínculo entre el documento html y un recurso externo. 
+    Se usa mucho para vincular o referenciar las hojas de estilo o style sheets, css.
+    Uso: &lt;link rel="hoja de estilo" type="text/css" href="mi estilo.css" /&gt;</p>
+    
+    <p>Tag &lt;style&gt;: Define información del estilo del documento html. Es decir, de cómo se verá cada uno de los tags tipo.
+    Uso: &lt;style type="text/css"&gt; body(background-color: yellow) p(color: blue)&lt;/style&gt;</p>
+    
+    <p>Tag &lt;meta&gt;: Define información sobre el propio documento html, como codificación de caracteres, 
+    palabras clave para motores de búsqueda, autor del documento, cuándo se modificó por última vez, etc.
+    <br />Uso: Descripción de la página: &lt;meta name="description" content="Free Web tutorials on HTML, CSS, XML" /&gt;<br /> 
+    Palabras clave para motores de búsqueda y tal: &lt;meta name="keywords" content="HTML, CSS, XML" /&gt;</p>
+    
+    <p>Tag &lt;script&gt;: Define un script del lado del cliente, como por ejemplo un JavaScript.</p>
+    <hr />
+    <!--======================================================================================================================-->
+    <h1>Formas de usar CSS (Cascade Style Sheets) en documentos HTML:</h1>
+    <p>En línea para un sólo tag, con el atributo "style" de los tags</p>
+    <p>En la cabecera para todo el archivo HTML, con el tag &lt;style&gt;</p>
+    <p>Con archivos CSS que sirven para definir el estilo de varios documentos HTML.</p><br />
+    
+    <p>Estilos en línea: Ejemplo: &lt;p style="color: blue; margin-left: 20px;"&gt;Esto es un párrafo con estilo&lt;/p&gt;</p>
+    <p style="color: blue; margin-left: 20px;">Esto es un párrafo con estilo</p>
+    <p>Hay muchos atributos de estilo como background-color, font-family, font-size</p><br />
+    
+    <p>Estilo en el documento HTML (Style Sheet (hoja de estilo) interna al documento): 
+    Ponemos instrucciones CSS dentro del tag &lt;head&gt; con el tag &lt;style&gt;. Ejemplo:</p>
+    <p>
+      &lt;head&gt;<br />
+      &lt;style type="text/css"&gt;<br />
+        body {background-color: yellow;}
+        p {color: red;}
+      &lt;/style&gt;<br />
+      &lt;/head&gt;<br />
+    </p>
+    
+    <p>
+      Style Sheet (hoja de estilo) externa: Vinculamos una CSS al archivo HTML, dentro del tag &lt;head&gt; 
+      con el tag &lt;style&gt;. Ejemplo:<br />
+      &lt;head&gt;<br />
+      &lt;link rel="stylesheet" type="text/css" href="miestilo.css" /&gt;<br />
+      &lt;/head&gt;<br />
+    </p>
+    <hr />
+    <!--=================================================================================================-->
+    <h1>Imágenes</h1>
+    <p>Tag &lt;img&gt;: Atributos:<br />
+      src: "Dirección web" ó "dirección del archivo"<br />
+      alt: "Texto informativo (hint de la imagen) o alternativo si no se ve"<br />
+      width: "Ancho, por defecto en píxeles"<br />
+      heigth: "Alto, por defecto en píxeles"<br />
+      usemap: "#imagen", se usa para hacer de la imagen un mapa (&lt;map&gt;).<br />
+    </p>
+    
+    <p>Tag &lt;map&gt;: Define una imagen que se puede separar en áreas clickables.<br /> 
+      Uso:<br />
+      &lt;img src="..." width="ancho" heigth="alto" alt="..." usemap="#nombreMapa" /&gt;<br />
+      &lt;map name="nombreMapa"&gt;<br />
+        &lt;area shape="rect" coords="0,0,52,14 href="dirección web o JavaScript" alt="..." /&gt; Rectángulo (2 esquinas)<br />
+        &lt;area shape="circle" coords="0,0,52 href="dirección web o JavaScript" alt="..." /&gt; Círculo (Centro y radio)<br />
+        &lt;area shape="poly" coords="0,0,52,14,21,98 href="dirección web o JavaScript" alt="..." /&gt; Polígono (vértices)<br />
+      &lt;/map&gt;
+      Atributos:<br />
+      name: "Nombre del mapa": Lo asocia con el elemento &lt;img&gt; cuyo atributo "usemap" coincide con "name".<br />
+      Los tags &lt;area&gt; son "trozos" delimitados del mapa, y clickables.<br />
+    </p>
+    
+    <p>Tag &lt;area&gt;: Define y delimita una región clickable de una imagen &lt;map&gt;.<br /> 
+      Uso:<br />
+        &lt;area shape="rect" coords="0,0,52,14 href="dirección web o JavaScript" alt="..." /&gt; Rectángulo (2 esquinas)<br />
+        &lt;area shape="circle" coords="0,0,52 href="dirección web o JavaScript" alt="..." /&gt; Círculo (Centro y radio)<br />
+        &lt;area shape="poly" coords="0,0,52,14,21,98 href="dirección web o JavaScript" alt="..." /&gt; Polígono (vértices)<br />
+      Atributos:<br />
+      shape: "Tipo de figura": rect, circle, poly.<br />
+      coords: "Coordenadas necesarias para delimitar la figura definida en "shape"": <br />
+        rect: coordenadas de esquinas NO y SE; circle: coordenadas del centro y longitud del radio;<br /> 
+        poly: coordenadas de los vértices<br />
+      href: "link (enlace) o JavaScript" que se activa al clickar en ese &lt;area&gt;<br />
+      alt: "Texto informativo (hint de la imagen) o alternativo si no se ve"<br />
+    </p>
+    <hr />
+    <!--=========================================================================-->
+    <h1>Tablas</h1>
+    
+    <p>
+      &lt;table boder=25" cellpadding="5" cellspacing="5" frame="..."
+      &lt;tr&gt; Esto es una fila de la tabla<br />
+        &lt;th colspan="3"&gt; Esto es una celda de cabecera<br />
+        &lt;/th&gt;<br />
+        &lt;td colspan="2"&gt; Esto es una celda normal<br />
+        &lt;/td&gt;<br />
+      &lt;/tr&gt;<br /><br />
+      
+      &lt;caption&gt;<br />
+      &lt;colgroup&gt;<br />
+      &lt;col /&gt;<br />
+      &lt;thead&gt;<br />
+      &lt;tbody&gt;<br />
+      &lt;tfoot&gt;<br />
+      &lt;/table&gt;<br /><br />
+      Atributos:<br />
+      En &lt;table&gt;:<br />
+      En &lt;tr&gt;:<br />
+      En &lt;th&gt;:<br />
+      En &lt;td&gt;:<br />
+    </p>
+    <hr />
+    <!--====================================================================================================-->
+    <h1>Listas</h1>
+    <p>
+      <b>Sin numerar:</b>
+      &lt;ul type="disc","circle","square"&gt;<br />
+      &lt;li&gt;perro&lt;/li&gt;<br />
+      &lt;li&gt;gato&lt;/li&gt;<br />
+      &lt;/ul&gt;<br /><br />
+      
+      <b>Numeradas:</b>
+      &lt;ol type="i","I","a","A","1"&gt;<br />
+      &lt;li&gt;perro&lt;/li&gt;<br />
+      &lt;li&gt;gato&lt;/li&gt;<br />
+      &lt;/ol&gt;<br /><br />
+      
+      <b>Listas de definición:</b> Lista una serie de elementos y sus descripciones o definiciones.
+      &lt;dl&gt; Comienza la lista<br />
+      &lt;dt&gt; Nombre del elemento<br />
+      &lt;dd&gt; Descripción del elemento<br />
+      y así sucesivamente...
+      &lt;/dl&gt;<br /><br />
+    </p>
+    <hr />
+    <!--=============================================================================================-->
+    
+    <h1>El tag &lt;div&gt;</h1>
+    <p>
+      Es un tag o elemento de bloque que puede contener a otros. Junto con CSS podemos usarlo para darles atributos de estilo
+      a los elementos que contiene.
+      ¡OJITO! Qué cosa tan rara!! Sirve tb para definir el "layout" o la "disposición espacial" del documento. 
+      Se supone que el correcto uso de &lt;table&gt; no es para hacer tablas, sino para mostrar datos tabulados. 
+      En su lugar, se puede usar para ello en condiciones &lt;div&gt;.
+    </p>
+    
+    <h1>El tag &lt;span&gt;</h1>
+    <p>
+      Es un elemento o tag en línea que se usa como contenedor de texto. Si se usa junto con CSS, 
+      nos sirve para darle atributos de estilo a partes del texto.
+    </p>
+    <hr />
+    <!--===========================================================================================-->
+    <h1>Los forms o formularios para recoger datos</h1>
+    <p>
+      &lt;input type="tipo" name="nombre"...&gt;<br />
+    <u>Tipos:</u><br />
+      text: Cuadro de texto de una línea para que el usuario escriba<br />
+      password: Idem, pero al escribir salen asteriscos "*"<br />
+      radio: Radio Buttons, puede elegir uno sólo de ellos y uno sólo puede estar marcado por defecto.<br />
+      checkbox: Se pueden elegir ninguna o varias opciones, y varias pueden estar marcadas por defecto.<br />
+      submit: Botón de enviar.<br />
+      Hay más y con ejemplos en el archivo ALMACEN 1/PROGRAMACION/HTML.
+    </p>
+    <hr />
+    <!--=========================================================================================-->
+    <h1>"iframe": Vale para mostrar una página dentro de otra.</h1>
+    <p>Mostramos directamente una página:</p>
+    <iframe src="ejemplo_div.html" frameborder="0" width="300" height="200"></iframe>
+    <p>Usamos el "iframe" como el "target" u objetivo de un link:</p>
+    <iframe src="ejemplo_div.html" name="iframe1" frameborder="0" width="300" height="200"></iframe>
+    <p><a href="http://www.w3schools.com" target="iframe1">al w3cschools en el iframe</a></p>
+    <hr />
+    <!--=========================================================================================================-->
+    <h1>Scipts</h1>
+    <p>
+      Formas de insertar un script en un archivo HTML:<br />
+    </p>
+    <ul>
+      <li>
+        Podemos meter el propio código del script directamente en &lt;head&gt; o en &lt;body&gt;:<br />
+        &lt;script type="text/javascript"&gt;
+          Código del script
+        &lt;/script&gt;
+      </li>
+      
+      <li>
+        También podemos importar la librería o archivo, por ejemplo un .js (JavaScript):<br />
+        &lt;script type="text/javascript" src="file:///F:/PROGRAMACION/HTML/javascript/utilidades.js"&gt;&lt;/script&gt;
+      </li>
+    </ul>
+    <hr />
+    <p>HTML entities: Son caracteres que hay que usar con códigos especiales, como &lt;, &gt;, etc.</p>
+    <h1>URL's</h1>
+    <p>
+      Significa: Uniform Resource Locator. Cada documento como documentos(páginas web, etc) tiene su propa URL, 
+      que se puede expresar bien en palabras con el nombre del sitio web: www.pepe.com o en dirección IP: 192.168.21.15. 
+      Ambos son sinónimos.
+    </p>
+    <p>
+      Una URL (en palabras) se compone de:<br />
+      esquema://host.dominio:puerto/ruta/nombre_archivo<br />
+      Sus partes son:
+    </p>
+    <ul>
+      <li>
+        scheme o esquema: define el tipo de servicio de Internet. Hay varios servicios:
+        <ul>
+          <li>http (HiperText Transfer Protocol): El más habitual; páginas web normales, no encriptadas.</li>
+          <li>https (Secure HiperText Transfer Protocol): Páginas web seguras, encriptadas.</li>
+          <li>ftp (File Transfer Protocol): Para cargar o descargar archivos, sirve para mantener los dominios.</li>
+          <li>file: Ruta de un archivo en tu computador.</li>
+        </ul>
+      </li>
+      <li>
+        host: Define el dominio <b>anfitrión</b>, por defecto para el servicio http es www.
+      <li>
+        domain o dominio: Define el nombre del dominio de Internet donde se encuentra la página, como w3schools.com.
+      </li>
+      <li>
+        :port o :puerto: Define el número de puerto en el host (en el servicio http por defecto es 80).
+      </li>
+      <li>
+        path o ruta: Define una ruta en el dominio. Si se omite, estamos trabajando en el directorio raíz del dominio o sitio web. 
+      </li>
+      <li>
+        nombre_archivo: Define el nombre del documento o recurso. 
+      </li>
+    </ul>
+    <p>Problemas con la codificación en URL: No se permiten tildes, eñes, espacios en blanco, etc. El espacio en blanco es %20.</p>
+  </body>
+</html>

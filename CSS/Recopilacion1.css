@@ -1,0 +1,90 @@
+/* 
+    Document   : Recopilacion1
+    Created on : Sep 24, 2012, 8:50:02 AM
+    Author     : Administrador
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+#iframe1 {
+  frameborder: 1;
+  border-color: #00FF00;
+  border-width: 5px 0;
+  width: 100%;
+  height: 400px;
+  background-color: #FFFFFF;
+}
+
+ul.menuVertical {
+  padding:0;
+  margin:0;
+  list-style-type:none;
+}
+
+ul.menuVertical a {
+  width:6em;
+  text-decoration:none;
+  text-align: center;
+  color:orange;
+  background-color:blue;
+  padding:0.2em 0.6em;
+  border-top:1px solid white;
+  border-bottom:1px solid white;
+  display: block; /* esto es lo básico para lograr el menú vertical. Si no, queda como el culo. */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.invisible {
+  display: none; 
+}
+
+.visible {
+  display: anything; 
+}
+
+ul.menuVertical a:hover {
+  background-color: yellow;
+  font-weight: bold;
+  color: green;
+}
+
+h1 {
+  text-align: center;
+}
+
+div.nyu {
+  background-color: blue; 
+  background-image: url('../archivos/nyu.ico');
+  background-repeat: no-repeat;
+  background-position: right top;
+  background-attachment: fixed;
+  color: white; 
+  height: max-content; 
+  width: 60%; 
+  float: left;
+}
+
+div.nyu a:link {color: yellow;}
+div.nyu a:hover, div.nyu a:active {color: red;}
+div.nyu a:visited {color: orange;} 
+
+#iframe2 {
+  width: 100%;
+  height: 500px;
+  overflow: scroll;
+}
+
+p.centrado {
+  text-align: center;
+  /* ponemos los márgenes de ambos lados iguales y ya está centrado el elemento.*/
+} 
+
+button.centrado {
+  margin-left: 30%;
+  margin-right: 30%;
+  /* ponemos los márgenes de ambos lados iguales y ya está centrado el elemento.*/
+}
+input.focusVerde:focus {
+  background-color: green;
+}

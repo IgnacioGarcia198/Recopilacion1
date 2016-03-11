@@ -1,0 +1,93 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+  </head>
+  <body>
+    <h1>Ejemplo de layout usando &lt;div&gt;:</h1>
+    
+    <div id="contenedor" style="width:500px">
+      <p>Este div contiene a todo lo demás.</p>
+      <div id="cabecera" style="background-color:#FFA500;">
+        <h1 style="margin-bottom:0;">Título principal de la página</h1>
+      </div>
+
+      <div id="menu" style="background-color:#FFD700;height:200px;width:100px;float:left;">
+        <b>Menu</b><br />
+        HTML<br />
+        CSS<br />
+        JavaScript
+      </div>
+
+      <div id="contenido" style="background-color:#EEEEEE;height:200px;width:400px;float:left;">
+        Aquí val el contenido de la página
+      </div>
+
+      <div id="pie" style="background-color:#FFA500;clear:both;text-align:center;">
+        Copyright de nachete
+      </div>
+
+    </div>
+    
+    <h1>Mismo ejemplo pero usando &lt;table&gt;:</h1>
+    <p>(Recordemos que hacer tablas no es el propósito correcto del tag &lt;table&gt;. En realidad es para mostrar datos tabulados).</p>
+    
+    <table width="500" border="0">
+      <tr>
+        <td colspan="2" style="background-color:#FFA500;">
+          <h1>Título principal de la página</h1>
+        </td>
+      </tr>
+
+      <tr valign="top">
+        <td style="background-color:#FFD700;width:100px;text-align:top;">
+          <b>Menu</b><br />
+          HTML<br />
+          CSS<br />
+          JavaScript
+        </td>
+        <td style="background-color:#EEEEEE;height:200px;width:400px;text-align:top;">
+          Aquí va el contenido
+        </td>
+      </tr>
+
+      <tr>
+        <td colspan="2" style="background-color:#FFA500;text-align:center;">
+          Copyright de nachete
+        </td>
+      </tr>
+    </table>
+    
+    <h1>Bueno pues ahora voy yo a chapucear estas cosillas XDD</h1>
+    
+    <div id="container" style="background-color: #555F90; width: 500px; height: 300px; font-family: arial; font-size: 12pt;
+         text-align: center">
+      <p>Hola yo soy un texto de la división "div" o capa principal</p>
+      
+      <div id="arriba" style="background-color: #335412; width: 100px; float: top; font-size: 10pt; white-space: nowrap">
+        <p>Hola yo tengo el texto más pequeño</p>
+      </div>
+      
+      <div id="derecha" style="background-color: #025361; height: 50px; float: right; font-size: 14pt">
+        <p>Hola yo tengo el texto más grande</p>
+      </div>
+      
+      <div id="haciendo_puzzle" style="background-color: #F45710; text-align: right;">
+        <p>Hola yo tengo el texto a la derecha</p>
+      </div>
+      
+      <div id="abajo" style="background-color: #725361; height: 50px; font-weight: bold; clear: both">
+        <p>Hola yo tengo el texto en negrita</p>
+      </div>
+      
+      <div id="enmedio" style="background-color: #725F61; font-style: italic; height: 65px; float: left">
+        <p>Hola yo tengo el texto en cursiva</p>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,622 @@
+/* 
+    Document   : CSSbasico1
+    Created on : Sep 19, 2012, 1:46:59 PM
+    Author     : El puto amo
+    Description:
+        Esto me sirve para aprender CSS y al que lo vea para una mierda.
+*/
+
+body {
+  background-color:#FFD700; 
+}
+h1 {
+  color:orange;
+  text-align:center;
+}
+p {
+    font-family:"Times New Roman";
+    font-size:20px;
+}
+/* Usando el id de un tag o elemento como selector podemos cambiar sólo ese elemento ¡ojo! poner "#" delante del id: */
+#parrafo1 {
+  text-align:center;
+  color:red;
+}
+/*Selector "class": Sirve para definir el estilo de varios elementos que tienen la misma clase. Se usa poniendo algún elemento
+genérico de HTML seguido de "." (atributo de clase) y la clase. ¡¡LAS CLASES SON LOS ATRIBUTOS DE LOS TAGS EN HTML!! Bueno, es un 
+poco distinto...*/
+/* Si no especificamos un tipo de elemento o tag, como aquí, se aplicará a todos: */
+.centrado {
+  text-align:center; /* Sólo se aplicará en aquellos elementos que tengan el atributo text-align, lógicamente. 
+  Además sólo se aplicará en un elemento cuando hagamos en sus atributos class="center".*/
+}
+p.centradoVerde { /* Como el anterior, pero sólo afecta a los elementos o tags p.*/
+  text-align:center;
+  color:green;
+}
+/* Cosas del fondo (background): */
+p {background-color:pink;}
+div {background-color:yellow;}
+body {
+  background-image:url('../archivos/crusade01.jpg');
+  background-repeat:repeat-y;
+  background-position:right top; /* así se ponen varios valores!! */
+  background-attachment:fixed; /* el fondo no se mueve!! */
+}
+/* La forma corta: */
+body {background:pink url('../archivos/crusade01.jpg') repeat-y fixed right top;}
+/* Lo malo es que las propiedades tienen que ir en ese orden, no importa si no se ponen todas pero las que se pongan en ese orden */
+
+/* Cosas del texto: */
+body {color:blue;} /* Si definimos el color de la letra, también debemos definir el del fondo*/
+h2{color:#555222;}
+p.fecha {text-align:right;}
+p.principal {text-align:justify;}
+a {text-decoration:none;} /* así no se subrayan los enlaces en los tags <a> */
+h1 {text-decoration:overline;}
+h2 {text-decoration:line-through;}
+h3 {text-decoration:underline;}
+h4 {text-decoration:blink;}
+p.mayusculas {text-transform:uppercase;}
+p.minusculas {text-transform:lowercase;}
+p.Nombre {text-transform:capitalize;}
+p {text-indent:50px;} /* para especificar la sangría de primera línea */
+/* hay muchísimos más, pero de momento puede valer... */
+
+/* FUENTES */
+/* Poner un tipo de letra: */
+p {font-family:"Times New Roman", Times, serif;}
+/* Cuando el nombre de la fuente tiene varias palabras, debe ponerse entre comillas. Empezamos con la fuente que queremos y luego 
+vamos generalizando hasta la familia genérica (en este caso serif). Si el navegador no soporta la primera fuente pasará a la siguiente,
+y así sucesivamente*/
+
+/* Estilo de la fuente: Tiene 3 valores posibles: */
+p.normal {font-style:normal;}
+p.cursiva {font-style:italic;}
+p.oblicua {font-style:oblique;}
+/* tamaño de la fuente: */
+h2 {font-size:30px;} /* esto no funciona en Internet Explorer viejos, pero se puede evitar este problema usando unidades "em": */
+h2 {font-size:1.875em;} /* 30px/16 = 1.875em */ /* Así funciona en todos los navegadores*/
+/* Todavía hay problemas en versiones viejas de Internet Explorer. La solución es poner todos los tamaños de fuente en unidades "em"
+excepto el del "body" que lo ponemos en porcentaje: */
+body {font-size:100%;}
+h1 {font-size:2.5em;}
+h2 {font-size:1.875em;}
+p {font-size:0.875em;}
+/* ajustar el "peso" de la fuente: */
+p.normal {font-weight:normal;}
+p.ligera {font-weight:lighter;}
+p.gruesa {font-weight:bold;}
+p.masgruesa {font-weight:900;}
+/* Variantes de la fuente: */
+p.normal {font-variant:normal;}
+p.peqmayus {font-variant:small-caps;}
+/* para usarlo todo junto, la versión corta: */
+p.tipo1 {font:italic bold 12px/30px Georgia,serif;}
+
+/* Estilo en links */
+a:link {color:#FF0000;} /* Link no visitado */
+a:visited {color:#00FF00;} /* link visitado */
+a:hover {color:#FF00FF;} /* Cuando el puntero está sobre el link*/
+a:active {color:#551122;} /* cuando se hace click en el link */
+/* siempre debe ponerse en este orden, excepto entre "link" y "visited" que da igual */
+a:link {text-decoration:none;} /* Link no visitado */
+a:visited {text-decoration:none;} /* link visitado */
+a:hover {text-decoration:underline;} /* Cuando el puntero está sobre el link*/
+a:active {text-decoration:underline;} /* cuando se hace click en el link */
+
+a:link {background-color:#000000;} /* Link no visitado */
+a:visited {background-color:#FF0000;} /* link visitado */
+a:hover {background-color:#FF00FF;} /* Cuando el puntero está sobre el link*/
+a:active {background-color:#FFFFFF;} /* cuando se hace click en el link */
+
+/* Ejemplo cambiando más cosas y con clases: */
+a.two:link {color:#ff0000;}
+a.two:visited {color:#0000ff;}
+a.two:hover {font-size:150%;}
+
+a.three:link {color:#ff0000;}
+a.three:visited {color:#0000ff;}
+a.three:hover {background:#66ff66;}
+
+a.four:link {color:#ff0000;}
+a.four:visited {color:#0000ff;}
+a.four:hover {font-family:monospace;}
+
+a.five:link {color:#ff0000;text-decoration:none;}
+a.five:visited {color:#0000ff;text-decoration:none;}
+a.five:hover {text-decoration:underline;}
+
+/* Con forma de botón o caja: */
+a:link,a:visited {
+  display:block;
+  color:white;
+  /*background-color:blue;*/
+  width:150px;
+  text-align:center; /* la página mete espacios de más a la izda no sé por qué pero esto está bien. */
+  padding:4px;
+  text-decoration:none;
+}
+a:hover,a:active {
+  background-color:red;
+}
+
+/* LISTAS */
+/* Lo podemos hacer con clases: */
+ul.a {list-style-type:circle;}
+ul.b {list-style-type:square;}
+ul.c {list-style-type:disk;}
+
+ol.a {list-style-type:lower-greek;}
+ol.b {list-style-type:upper-latin;}
+ol.c {list-style-type:upper-roman;}
+/* Hasta podemos poner una imagen como el marcador de elementos de lista: */
+ul {
+  list-style-image: url('../archivos/nyu.ico');
+}
+/* Problema: se va a ver la imagen distinta en cada navegador. La solución es ésta: */
+ul {
+  list-style-type:none; /* quitamos el marcador de elemento de lista */
+  padding:0px; /* ponemos estas dos cosas a 0 para compatibilidad entre navegadores */
+  margin:0px;
+}
+ul li { /* aquí cambiamos los tags "li" dentro del tag "ul" */
+  background-image:url('../archivos/nyu.ico'); 
+  background-repeat:no-repeat; /* ponemos la imagen de fondo una sola vez, sin que se repita */
+  background-position:0px 5px; /* la posicionamos donde queramos */
+  padding-left:14px; /* posicionamos el texto del elemento de la lista para que pegue con la imagen como marcador */
+}
+/* forma corta: */
+ul {
+  list-style:square url('../archivos/nyu.ico');
+  /* orden: type, position, image. Puede faltar alguno de ellos pero los que haya deben ir en ese orden */
+}
+
+/* TABLAS */
+/* bordes: */
+table,th,td {
+  border:1px solid black; /* aquí hemos puesto con "la forma corta" 3 propiedades seguidas: grosor, solidez, color. */
+}
+/* También es posible modificar el borde de cada lateral por separado: border-top, border-bottom, border-right, border-left. */
+/* la tabla y los elementos th y td tienen sus propios bordes por separado. Para manejar que estén juntos o no: */
+table {border-collapse:collapse;} /* así quedan juntos, pero si ponemos "separate" quedarán separados */
+/* ancho y alto: */
+table {
+  width:100%; /* ocupará toda la página en anchura */
+  height:500px;
+}
+th {height:50px;}
+/* alineación del texto: */
+td {
+  text-align:right; /* alineación horizontal */
+  height:50px;
+  vertical-align:bottom; /* alineamiento vertical */
+}
+/* padding (distancia entre el borde de la celda y su contenido): */
+table {padding:10px;} /* tb podemos modificar sólo un lateral: padding-top, padding-bottom, padding-left, padding-right. */
+td {padding:5px;}
+/* colores de texto y de fondo: */
+th {
+  background-color:green;
+  color:white;
+}
+/* Podemos modificar una sóla tabla en lugar de todas en general, poniéndole un ""id" como id="clientes". Entonces para referirnos a
+esa tabla podemos decir #clientes, #clientes tr.impares definiendo clases para "tr". Tb podemos hacer una clase de tabla: table.clientes
+tr.impares. De esta forma, en ambos casos la clase "impares" para "tr" estará sólo dentro de esa tabla o ese tipo de tabla. */
+
+/* Colocar la "caption" que dice qué es lo que representa la tabla: */
+caption {caption-side:after;} /* suponemos que after=bottom y before=top o algo así */
+
+/* Todos los elementos (contenidos entre los tags) se pueden ver como cajas (boxes). Modificamos el diseño y disposición de la caja
+con  el modelado de cajas o "box model". Esto tiene 4 partes:
+margin: trozo transparente que se separa alrededor del borde
+border: borde exterior de la caja, que se ve afectado por el color de fondo (background-color) de la caja
+padding: separación entre el contenido y el borde, también es afectado por el color de fondo
+content: contenido que ponemos en la caja (texto, imágenes, etc).
+*/
+/* Ejemplo: */
+div.caja1 {
+  width:250px; /* ANCHO DEL ÁREA DEL CONTENIDO */ /* ¡OJO! EL ANCHO Y EL ALTO SON DEL CONTENIDO!!! */
+  height:120px; /* ALTO DEL ÁREA DEL CONTENIDO */
+  border:5px solid gray; /* GROSOR DEL BORDE */
+  margin:10px; /* GROSOR DEL MARGEN */
+  padding:10px; /* DISTANCIA ENTRE EL CONTENIDO Y LOS BORDES */
+  /* tb podemos cambiar por separado padding-left, etc etc */
+}
+/* AHORA VEMOS LO QUE OCUPA TODA LA CAJA EN REALIDAD:
+ANCHO TOTAL = ANCHO CONTENIDO + 2*PADDING + 2*BORDE + 2*MARGEN = 250 + 2*10 + 2*5 + 2*10 = 300px;
+ALTO TOTAL = ALTO CONTENIDO + 2*PADDING + 2*BORDE + 2*MARGEN = 120 + 2*10 + 2*5 + 2*10 = 170px; */
+
+/* En versiones antiguas de Internet Explorer se verá mal, pero sólo si no ponemos la declaración "!DOCTYPE". Mientras la pongamos,
+no habrá problema. */
+
+/* BORDES */
+/* border-style: tipo de borde del elemento. Mientras no se defina el valor de esa propiedad, 
+las propiedades del borde no tendrán efecto */
+p.borde1 {
+  border-style:solid;
+  border-width:5px;
+}
+p.borde2 {
+  border-style:dotted; /* a puntos o topos */ 
+  border-width:medium;
+}
+/* Recordemos que se puede modificar cada borde por separado: border-top-style, border-left.style, etc.*/
+/* FORMAS DE ESPECIFICAR UN COLOR:
+POR NOMBRE (como "red")
+POR VALOR HEXADECIMAL (como "#FF000F")
+POR VALOR RGB (como "rgb(255,0,0)") */
+
+/* Propiedades de los cuatro bordes en forma corta: */
+p.borde3 {border-style:dotted solid double dashed;} /* se cambian los bordes en este orden: top,right,bottom,left */
+p.borde4 {border-style:dotted solid double;} /* se cambian los bordes en el mismo orden, excepto el left */
+p.borde5 {border-style:dotted solid;} /* top y bottom dotted, right y left solid. */
+p.borde6 {border-style:dotted;} /* todos los bordes dotted */
+/* propiedades del borde en forma corta: */
+p.borde7 {border:5px solid red;}
+/* orden: border-width, border-style(obligatorio), border-color */
+/* otro ejemplo sólo con un borde lateral: */
+p.borde8 {border-top:thick double rgb(127,84,21);}
+/* color de los 4 bordes: */
+p.bordeArcoiris
+{
+  border-style:solid;
+  border-color:red #00ff00 #0000ff rgb(255,255,0);
+}
+
+/* OUTLINE: Es una línea alrededor del borde de un elemento que lo hace destacar. */
+p.enmarcado {outline:green dotted thick;} /* orden: outline-color, outline-style, outline-offset, outline-style, outline-width. */
+/* en IE8 y anteriores sólo funciona bien si ponemos la declaración "!DOCTYPE" */
+
+/* MÁRGENES */
+/* podemos poner todos los márgenes iguales o cada uno por separado, y tb en la forma corta: */
+p.margen1 {margin:20px;}
+p.margen2 {
+  margin-top:50px;
+  margin-bottom:50px;
+  margin-right:30px;
+  margin-left:30px;
+}
+p.margen3 {margin:20px 40px 60px 80px;} /* top, right, bottom, left */
+p.margen4 {margin:20px 40px 60px;} /* top, right y bottom */
+p.margen5 {margin:20px 40px;} /* top y bottom 20, right y left 40 */
+/* no olvidar que tb podemos usar otras unidades (cm, mm, %, etc...)*/
+
+/* PADDING: FUNCIONA EXACTAMENTE IGUAL QUE MARGIN, ASÍ QUE NI LO PONEMOS (padding-top, padding-left etc) */
+
+/* para dar el mismo estilo a varios elementos (selectores) a la vez, sin ponerlo tropecientas veces: */
+h3,h4,h5 {color:green;}
+/* ANIDAR SELECTORES: */
+/* ejemplo: */
+p.azulcentrado {
+  color:blue;
+  text-align:center;
+}
+.marked {background-color:red;}
+.marked p.azulcentrado {color:white;} /* esto sólo afecta a los párrafos ("p") de clase "azulcentrado" que estén dentro de otro elemento
+(como "div" de clase "marked". */
+
+/* ancho y alto limitados en máximo y mínimo: */
+p.limitado {
+  max-width:100%; 
+  max-height: 60px;
+  min-width:50px;
+  min-height:30px;
+} /* el máximo ancho es ocupar todo el ancho de la pantalla */
+
+/* VISIBILITY (visibilidad) */
+p.escondido {visibility:hidden;} /* hacemos que no se vea el elemento, pero sigue ocupando su espacio */
+p.borrado {display:none;} /* hacemos que no se vea y además no ocupa espacio, como si no estuviera en la página */
+/* Con "display" podemos hacer que un elemento en línea se vea como un elemento de bloque y viceversa: */
+li {display:inline;} /* ahora los elementos de una lista van a salir seguidos en la misma línea */
+span {display:block;} /* ahora los tags "span" meten saltos de línea, como cualquier otro elemento de bloque */
+/* OJO Sólo se cambia la forma de ver el elemento, no su naturaleza. "li" sigue siendo de bloque y "span" de línea. */
+p.colapsado {visibility:collapse;} /* esto hace que se quede "apretado" el elemento y no se ve, o algo así. Es lo mismo que "hidden",
+excepto cuando haya grupos de columnas en una tabla y cosas raras. */
+/* "collapxe" sólo funciona en IE8y anteriores si hemos declarado el "!DOCTYPE" */
+
+/* POSICIONAMIENTO */
+p.fijo { /* ponemos los párrafos de esta clase en una posición fija; no se moverán ni con el scrolling. En <=IE8 sólo con !DOCTYPE */
+  position:fixed;
+  top:30px;
+  right:5px;
+}
+/* posicionamiento relativo: con respecto a la propia posición normal del elemento */
+p.relativo {
+  left:-20px;
+}
+/* con esto se pueden superponer unos elementos sobre otros, pero su espacio original sigue estando en el flujo normal de la página.
+Se suele usar en los elementos padres o contenedores de otros elementos posicionados de forma absoluta. */
+/* posicionamiento absoluto: el elemento se posiciona con respecto a su elemento padre más inmediato que tenga una posición que no
+sea "static". Si no lo encuentra, el elemento padre se considera "<html>". */
+p.absoluto { 
+  position:absolute;
+  left:100px;
+  top:150px;
+  z-index:-1;
+}
+/* estos elementos se quitan del flujo normal de la página y pueden solaparse con otros elementos. */
+/* al solaparse, el que tenga el mayor valor en su propiedad "z-index" estará encima o delante. */
+
+/* podemos poner la "shape" (rect, circle, poly) o figura dentro de la cual se mete un elemento: */
+img.rectangulo {
+  position:absolute;
+  clip:rect(0px,60px,200px,0px);
+}
+
+/* cuando definimos un elemento contenedor (como "div", si se nos sale el contenido del elemento("overflow"), podemos elegir cómo se
+comportará dicho elemento: */
+div.sobranteEscondido { 
+  background-color:#00FF00;
+  width:100px;
+  height:100px;
+  overflow:hidden; /* el contenido se "corta" hasta donde cabe, y la parte sobrante no se ve. */
+}
+
+div.sobranteScroll { 
+  background-color:#00FF00;
+  width:100px;
+  height:100px;
+  overflow:scroll; /* el contenido si sobra se ve en "scroll" con un control lateral. */
+}
+/* si ponemos "overflow:visible", se ve todo lo que sobra salido a lo cutre. Y si lo ponemos "auto" lo maneja el navegador. */
+
+/* Cambiar el cursor al pasarlo sobre un elemento: */
+p {cursor:help;}
+ul {cursor: move;}
+h1 {cursor: cell;}
+
+/* ELEMENTOS FLOTANTES: Se pueden flotar horizontalmente, a derecha o izquierda. */
+/* los elementos anteriores al flotante no se ven afectados, pero los posteriores FLUIRÁN ALREDEDOR DE ÉL. */
+/* ejemplo: */
+img.flotaDerecha {
+  float: right; /* entonces lo que se ponga a continuación fluirá a su izquierda. */
+}
+/* Podemos evitar que los elementos posteriores fluyan a su alrededro de esta forma: */
+.lineaTexto {clear: both;} /* así el nuevo elemento no fluye alrededor hacia ningún lado */
+
+/* Si ponemos varios elementos flotantes seguidos, flotará cada uno hacia el antrior si hay espacio. Por ejemplo así ponemos todo
+apilado como una galería de imágenes o similar: */
+.thumbnail
+{
+  float:left;
+  width:110px;
+  height:90px;
+  margin:5px;
+} /* quedarán los elementos seguidos de esta clase en forma de cuadrícula. */
+
+/* Así podemos poner una primera letra gigante, como hacen a veces: */
+span.letraEnorme
+{
+  float:left;
+  width:0.7em;
+  font-size:400%;
+  font-family:algerian,courier;
+  line-height:80%;
+}
+/* Así el resto del texto fluye alrededor de la cacho letra, la cual ponemos como <span>letra</span>. */
+
+/* HACER UN MENÚ HORIZONTAL: */
+ul {
+  float:left;
+  width:100%;
+  padding:0;
+  margin:0;
+  list-style-type:none; /* un menú es como una lista sin simbolitos */
+}
+a {
+  float:left;
+  width:6em;
+  text-decoration:none;
+  color:white;
+  /*background-color:purple;*/
+  padding:0.2em 0.6em;
+  border-right:1px solid white;
+}
+/* hacemos que los elementos "a" o enlaces floten todos a la izquierda para que se pongan toos seguidos */
+a:hover {background-color:#ff3300;}
+li {display:inline;} /* colocamos la lista en horizontal; ya sólo nos queda crear una lista de enlaces  y será un menú horizontal*/
+
+/* Usando las "div" y los estilos y bordes sobre ellas podemos hacer unas páginas muy chulas. */
+
+/* Recordar que un elemento de bloque tiene saltos de línea antes y después de él y que por defecto toma todo el ancho disponible
+en la página. */
+/* Ya hemos visto que se puede alinear el texto de dentro del bloque, pero para alinear el bloque en sí: */
+.centrado70
+{
+  margin-left:auto; /* este margen "auto" sólo funciona en <=IE8 con !DOCTYPE. */
+  margin-right:auto; /* el alineamiento no tendrá efecto si el ancho "width"=100%. */
+  width:70%;
+  background-color:#b0e0e6;
+}
+/* otra forma de alinear es usando el posicionamiento, y la propiedad "position", pero cuidado con no solapar en el absoluto. */
+/* Cuando usemos la propiedad "position", o mejor SIEMPRE, poner !DOCTYPE para evitar problemas en IE8 y anteriores. */
+/* Otra forma de alinear a izda y dcha: con float:right o left. */
+
+/* SIEMPRE QUE VAYAMOS A ALINEAR ELEMENTOS DE ALGUNA DE ESTAS FORMAS, Y COMO BUENA COSTUMBRE, DEBEMOS PREDEFINIR EL "margin" Y "padding"
+DEL ELEMENTO "<body>". SI NO, PUEDE VERSE DIFERENTE EN DISTINTOS NAVEGADORES. */
+/* por ejemplo: */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* PSEUDOCLASES */
+/* Se usan para añadir efectos especiales a algunos selectores. Sintaxis:
+selector:pseudoclase {propiedad: valor;} Y también se pueden usar junto con clases:
+selector.clase:pseudoclase {propiedad: valor;} */
+/* Esto ya lo hemos hecho con los enlaces ("a"), con a:link, a:visited, etc. */
+
+/* LA PSEUDOCLASE FIRST-CHILD */
+/* Se refiere a un elemento del tipo especificado que sea el primer elemento hijo de otro elemento. Ejemplo: */
+p:first-child {
+  color: #FF00FF; /* el elemento "p" que sea el primer hijo de cualkier otro (como <body> o <div>) tendrá la fuente de color rosagay */
+} 
+
+/* otro ejemplo más elaborado: */
+p > i:first-child {
+  color: #00FF00; /* el primer elemento <i> (cursiva) en todo elemento <p> será verde fosforito. */
+}
+
+/* todos los elementos <i> de todos los <p> que sean primeros hijos: */
+p:first-child i {color: red;} /* de color rojo */
+
+/* LA PSEUDOCLASE LANG */
+/* Nos sirve para definir reglas especiales según el idioma */
+q:lang(no) {quotes: "~" "~";} /* Marcas para citas o "quotes" en el lenguaje lang="no" (nombre de "language" que comience por "no"*/
+
+/* LA PSEUDOCLASE FOCUS: Permite cambiar el estilo del componente cuando está enfocado. Ejemplo con formas de entrada: */
+input:focus {
+  background-color: yellow;
+}
+/* las pseudo-clases no funcionarán bien en <=IE8 sin usar "!DOCTYPE" */ 
+
+/* PSEUDOELEMENTOS */
+/* Parecido a las pseudoclases. Sintaxis:
+selector:pseudoelemento {propiedad: valor;} Y también se pueden usar junto con clases:
+selector.clase:pseudoelemento {propiedad: valor;} */
+
+/* PSEUDOELEMENTO FIRST-LINE: Cambiamos el estilo de la primera línea de un texto. */
+p:first-line {
+  color: #ff0000;
+  font-variant: small-caps;
+}
+/* sólo se puede usar con elementos de bloque, y sólo se le pueden aplicar muchas propiedades pero no todas. */
+
+/* PSEUDO-ELEMENTO FIRST-LETTER */
+p:first-letter {
+  color: #b0e0e6;
+  font-size: xx-large;
+}
+/* mismas restricciones qeu first-line */
+
+/* se pueden poner varios pseudoelementos al mismo elemento, y se combinan sin problemas. */
+
+/* PSEUDOELEMENTO BEFORE: Para insertar contenido antes del propio contenido del elemento. */
+h1:before {
+  content:url('../archivos/nyu.ico');
+}
+/* PSEUDOELEMENTO AFTER: Para insertar contenido después del propio contenido del elemento. */
+h1:after {
+  content:url('../archivos/nyu.ico');
+}
+
+/* RECORDAR CÓMO SE HACEN LOS MENÚS: CON UNA LISTA DE ENLACES (<a>), CADA ENLACE CON DISPLAY:BLOCK PARA QUE SE VEAN COMO BOTONES 
+O CAJASO ALGO ASÍ, QUITANDO LOS SÍMBOLOS DE UL CON LIST-STYLE:NONE Y PONIENDO LA LISTA EN VERTICAL POR DEFECTO O EN HORIZONTAL CON
+DISPLAY:INLINE DENTRO DE LI. TAMBIÉN EN LI SE PUEDE PONER FLOAT:LEFT O RIGHT PARA QUE FLOTEN ENTRE SÍ LOS ELEMENTOS DEL MENÚ. */
+
+/* OPACIDAD/TRANSPARENCIA */
+img {
+  opacity: 0.4; /* debe ser un valor entre 0 y 1 */
+  filter: alpha(opacity=40); /* así se hace en IE8 y anteriores, opacity valor de 0 a 100 */
+}
+img:hover {
+  opacity: 1.0;
+  filter: alpha(opacity=100);
+} /* al pasar el ratón sobre la imagen, ésta se hace opaca */
+
+/* ejemplo de caja transparente con texto: */
+div.transbox {
+  /* otras cosas */
+  opacity: 0.6;
+  /* otras cosas */
+}
+div.transbox p {
+  /* otras cosas */
+  color: black;
+  /* otras cosas */
+}
+
+/* IMAGE SPRITES: Es una imagen que contiene otras imágenes dentro de ella, sirve para no tener que cargar tantas imágenes y de esta
+forma la página web tarde menos en cargarse */
+
+/* Separamos el sprite ese en sus imagenes o trozos: */
+img.home {
+  width:46px; /* ancho del trozo de imagen que queremos coger */
+  height:44px; /* alto del idem */
+  background:url('../archivos/img_navsprites.gif') 0 0; 
+  /* url de la imagen sprite y coordenadas dentro de ella donde empieza este trozo */
+}
+/* en el html será así: <img class="home" src="una imagen transparente" />. Esto es xq el el atributo "src" no puede estar vacío.
+Entonces la imagen que se verá en realidad es el fondo "background" que nosotros hemos definido aquí en el CSS. */
+img.next {
+  width:46px; /* ancho del trozo de imagen que queremos coger */
+  height:44px; /* alto del idem */
+  background:url('../archivos/img_navsprites.gif') -91px 0; 
+  /* url de la imagen sprite y coordenadas dentro de ella donde empieza este trozo */
+}
+
+#navlist {position: relative;}
+#navlist li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  position: absolute;
+  top: 0;
+}
+#navlist li, #navlist a {
+  height: 44px; 
+  display: block;
+}
+#home {
+  left: 0px; width: 45px;
+}
+#home a:link{background: url('../archivos/img_navsprites.gif') 0 0;}
+
+#next {left: 129px; width: 43px;}
+#next {background: url('../archivos/img_navsprites.gif') -91px 0;}
+
+#prev {left: 63px; width: 43px;} /* 63px para que se separen un poco entre ellas las imágenes */
+#prev {background: url('../archivos/img_navsprites.gif') -47px 0;}
+/* esto se ve como el culo, pero es porque antes ya había modificado las propiedades de los enlaces "a" más veces 
+Pues nonono no es por eso, tengo algo mal en el estilo dado a "li" o en su configuración anterior */
+
+#home a:hover{background: url('../archivos/img_navsprites_hover.gif') 0 -45px;}
+#prev a:hover{background: url('../archivos/img_navsprites_hover.gif') -47px -45px;}
+#next a:hover{background: url('../archivos/img_navsprites_hover.gif') -91px -45px;}
+
+/* LA REGLA @media: Permite poner distintas reglas para distintos "media" o medios (como son la pantalla, la impresora, aural,... */
+
+/* ejemplo: */
+@media screen {
+  p.test {font-family: verdana, sans-serif; font-size: 14px;}
+}
+@media print {
+  p.test {font-family: times, serif; font-size: 10px;}
+}
+@media screen,print {
+  p.test {font-weight: bold;}
+}
+/* hay más tipos de medios como all, aural, braille, embossed, projection, tty, tv */
+
+/* SELECTOR POR ATRIBUTOS: Identifica todos los elementos o tags que tengan el atributo nombrado. Ejemplo: */
+[title] {color: blue;} /* pone de color azul el texto de todos los elementos con atributo "title" */
+/* (las imágenes "img", las cabeceras "h", los párrafos "p" y otros elementos tienen ese atributo "title" */
+[title=paco] {border: 5px dotted green;} /* esto se aplica en todos los elementos con title="paco" */
+[title~=paco] {border: 10px dotted blue;} /* esto se aplica en todos los elementos cuyo atributo "title" contenga de alguna forma
+la cadena "paco" como palabra por separado, no importa que el atributo tenga más valores separados por espacios. */
+[lang|=en] {color: blue;} /* esto se aplica en todos los elementos que tengan un atributo "lang" el cual contenga la cadena "en", no
+impota que el atributo tenga más valores separados por guiones ("-"). */
+
+/* SELECTORES POR ATRIBUTOS PARA DAR ESTILO A LOS FORMULARIOS: Sirven para referirnos a un tipo genérico de formulario, mediante 
+el valor de su atributo "type", sin usar "class" o "id": */
+input[type="text"]
+{
+  width:150px;
+  display:block;
+  margin-bottom:10px;
+  background-color:yellow;
+}
+input[type="button"]
+{
+  width:120px;
+  margin-left:35px;
+  display:block;
+}
+
+body {
+  text-wrap: none;
+}
+h1 {
+  text-wrap: avoid;
+}

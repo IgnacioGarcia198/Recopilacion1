@@ -1,0 +1,118 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Pruebas con CSS</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <link rel="stylesheet" type="text/css" href="CSS/CSSbasico1.css" />
+  </head>
+  <body>
+    <h1>El CSS tiene más propiedades que en la guerra joe<a name="principio"></a></h1>
+    <p>Qué es el CSS:</p>
+    <ul>
+      <li>Cascading Style Sheets (hojas de estilo en cascada)</li>
+      <li>Definen cómo se mostrarán los elementos en cada tag de HTML.</li>
+      <li>Sólo existen a partir del HTML 4.0</li>
+      <li>Las hojas de estilo externas nos ahorran mucho trabajo, y están en archivos CSS.</li>
+    </ul>
+    <p>
+      Las instrucciones de CSS se llaman "rules" o reglas. Ejemplo: <br />
+      h1 {color:blue; font-size:12px;} (eso es una regla).
+    </p>
+    
+    <ul>
+      <li>"h1" es el <b>selector</b> de la regla</li>
+      <li>"color:blue" y "font-size:12px" son las <b>declaraciones</b> de la regla</li>
+      <li>"color" y "font-size" son <b>propiedades</b></li>
+      <li>"blue" y "12px" son <b>valores</b> que les asignamos a las propiedades en las declaraciones.</li>
+    </ul>
+    
+    <p>
+      Cosas especiales para ciegos o gente que tiene problemas para leer, o en el coche cuando conducimos: Aural Style Sheets.
+      Un ejemplo:<br />
+      h1,h2,h3,h4 {<br />
+        voice-family:male;<br />
+        richness:80;<br />
+        cue-before:url("beep.au")<br />
+      }
+      Más información sobre Aural en <br /><a href="http://www.w3schools.com/cssref/css_ref_aural.asp">la w3schools</a>.  
+    </p>
+    
+    <p>Unidades para medir tamaños en CSS:</p>
+    <ul>
+      <li>%: Porcentaje</li>
+      <li>in: Pulgada (inch)</li>
+      <li>cm: Centímetro</li>
+      <li>mm: Milímetro</li>
+      <li>em: Tamaño actual de la fuente para el mismo elemento que estamos modificando</li>
+      <li>ex: Como la mitad del tamaño actual de la fuente o así</li>
+      <li>pt: Punto (point) (= 1/72 de pulgada)</li>
+      <li>pc: Pica (= 12 puntos)</li>
+      <li>px: Pixel (punto en la pantalla)</li>
+    </ul>
+    
+    <p id="parrafo1">Mediante el id usándolo como selector podemos cambiar solamente un tag o elemento. ¡Ojo! "#" delante del id.</p>
+    <p>Selector "class": Sirve para definir el estilo de varios elementos que tienen la misma clase. Se usa poniendo algún elemento
+    genérico de HTML seguido de "." (atributo de clase) y la clase. ¡¡LAS CLASES SON LOS ATRIBUTOS DE LOS TAGS EN HTML!! Bueno, no
+    exactamente, más bien son atributos de los tags, sí, pero que al ponerle un valor a un tag en su atributo "class" estamos haciendo
+    que pertenezca a esa clase.</p>
+    
+    <p class="centrado">Usando class="centrado"</p>
+    <p class="centradoVerde">Usando class="centradoVerde"</p>
+    <p>
+      NO OLVIDAR QUE MEDIANTE EL TAG "style" se pueden definir hojas de estilo internas (dentro del tag "head":<br />  
+      &lt;style&gt;<br/> 
+        hr {color:blue;}<br/>
+        body {background-color:yellow;}<br/>
+        p {margin-left:20px;}<br/>
+      &lt;/style&gt;<br/>
+    </p>
+    
+    <p>Y recordemos que también se hacen en línea con el atributo style="...".</p>
+    <p>Siempre tienen preferencia los valores que se le den a las propiedades en línea, luego en el CSS interno y luego en el externo.
+    Pero las propiedades no definidas en el tipo de CSS más prioritario se tomarán del siguiente. Prioridades:</p>
+    <ol>
+      <li>Estilo definido en línea</li>
+      <li>CSS interno (código CSS definido en el tag "style" de "head"</li>
+      <li>CSS externo (archivo CSS)</li>
+      <li>Estilo por defecto en el navegador.</li>
+    </ol>
+    <p>¡OJO! Si ponemos el tag "link" que importa el CSS externo después del tag "style" que contiene el CSS interno, el externo 
+    sobreescribirá al interno!! OJO OJOOOO XD</p>
+    <p>Oye mira la chorrada que acabo de aprender: las letras serif son las que tienen "rabos" de adorno, como Times New Roman,
+    Georgia, etc. Y las sans-serif son las que no lo tienen como Arial, Verdana. Las monospace son tal que todos los caracteres
+    tienen el mismo ancho, son letras como de terminales y tal.</p>
+    
+    <p>FORMAS DE ESPECIFICAR UN COLOR:</p>
+    <ul>
+      <li>POR NOMBRE (como "red")</li>
+      <li>POR VALOR HEXADECIMAL (como "#FF000F")</li>
+      <li>POR VALOR RGB (como "rgb(255,0,0)")</li>
+    </ul>
+    
+    <img class="home" src="archivos/nyu.ico" />
+    <img class="next" src="archivos/nyu.ico" />
+    
+    <p>Ahora vamos a poner la lista de imágenes del navegador: </p>
+    <ul id="navlist">
+      <li id="home">
+        <a href="#casita"></a>
+        <a name="casita"></a>
+      </li>
+      
+      <li id="next">
+        <a href="#finpagina"></a>
+      </li>
+      
+      <li id="prev">
+        <a href="#principio"></a>
+      </li>
+    </ul>
+    <p><a name="finpagina"></a></p>
+    <br />
+    <p class="test">texto de prueba pantalla/impresora;</p>
+  </body>
+</html>

@@ -1,0 +1,605 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>index</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <link rel="stylesheet" type="text/css" href="CSS/Recopilacion1.css" />
+    <script src="JavaScript/Recopilacion1.js"></script>
+    <style>
+      #menuIzda {
+        width: 20%;
+        height: max-content;
+        color: #FFFF00;
+        background-color: #FF0000;
+        background-image: url('archivos/fmpf12.gif');
+        background-attachment: fixed;
+        background-repeat: repeat-x;
+        float: left;
+      }
+    </style>    
+  </head>
+  
+  <body onload="window.alert('se carga esta página')">
+    
+    <div id="menuIzda">
+      <h1>Menu</h1>
+      <ul class="menuVertical">
+        <li><a>Opción 1</a></li>
+        <li><a>Opción 2</a></li>
+        <li><a>Opción 3</a></li>
+      </ul>
+      <button type="button" autofocus="autofocus" onclick="revisarForma('forma3');">Revisar forma</button> 
+      <iframe id="iframe1" name="iframe1" src="ejemplo_div.html" seamless></iframe>
+      <h3>
+        Es súper importante recordar que las funciones getElementBy... de JavaScript cogen TODO LO QUE ESTÉ 
+        DENTRO DEL ELEMENTO QUE LAS LLAMA, no sólo los hijos inmediatos sino todos sus descendientes por más profundos que sean.<br />
+        El operador de campo de objeto, "[]" ó "." sólo funciona en las formas (objetos "form"), además de los getElementBy... Y 
+        TAMBIÉN FUNCIONA A CUALQUIER PROFUNDIDAD. Esto es porque las formas deben ser objetos o algo de eso. Normalmente en los 
+        demás elementos sólo funciona "getElementBy...".
+      </h3>
+    </div>
+    
+   <!--===================================================================================-->
+    
+    <div id="divcentral" style="background-color: yellow; color: red; height: max-content; width: 20%; float: left;">
+      <h1>Cosa central</h1>
+      <p class="centrado">
+        <button id="boton1" type="button" 
+          onclick=
+            "document.getElementById('boton1').innerHTML ='Sí más más tengo vicio'; 
+            document.getElementById('a1').innerHTML='jodiendo el enlace';"
+          onmouseover="document.getElementById('boton1').innerHTML='aaahhh sí por favor';"
+          onmouseout=
+            "innerHTML='Pétame nena!!';
+            document.getElementById('a1').innerHTML='enlace arreglado';">
+          Pétame nena!!
+        </button>
+      </p>
+      
+      <p class="centrado">
+        <button id="boton2" type="button" 
+          onclick='window.open("htmlBasico1.html", "iframe1");'
+          onmouseover="innerHTML='no me toques los botones';"
+          onmouseout="innerHTML='al html básico';">
+          al html básico
+        </button>
+      </p>
+      
+      <p class="centrado"><a id="a1" href="htmlBasico1.html" target="iframe1"> Ahora lo mismo pero con un enlace</a></p>
+      
+      <p class="centrado">
+        <button id="boton3" type="button" 
+                onclick=
+                  "document.getElementById('parrafoPideTiempo').className = 'visible';
+                  document.getElementById('pideTiempo').focus();">
+                Autodestrucción XD
+        </button>
+      </p>
+      
+      <p id="parrafoPideTiempo" class="invisible">
+        ¿Cuántos segundos le damos al temporizador de la bomba?
+        <input type="text" id="pideTiempo" name="pideTiempo" size="3" maxlength="3" onchange="activarTemporizador(value);">
+      </p>
+      
+      <p class="centrado"><button id="boton4" type="button" onclick="pararTemporizador();">Detener la explosión</button></p>
+      
+      <form>
+        Mete tu contraseña: <input type="password" size="20" maxlength="30"><br /><br />
+      </form>
+      
+      <form id="forma1" name="forma1">
+        <input type="checkbox" name="mascotas" checked value="perro">Tengo algún perro<br />
+        <input type="checkbox" name="mascotas" value="gato">Tengo algún gato<br />
+        <input type="checkbox" name="mascotas" value="conejo">Tengo algún conejo<br />
+        <input type="checkbox" name="mascotas" value="pokemon">Tengo algún pokemon
+      </form>
+      
+      <p class="centrado"><button id="boton5" type="button" onclick="datosCBR('forma1', 'mascotas');">¿Qué mascotas tengo?</button></p>
+        
+      <form id="forma2" name="forma2" action="">
+        Explícame qué coche tienes:<br />
+        <select name="coche" >
+          <option selected value="R5">Renault 5</option>
+          <option value="R19">Renault 19</option>
+          <option value="S127">Seat 127</option>
+          <option value="ferrari">Ferrari</option>
+          <option value="tartana">Mierda de tartana explosiva</option>
+        </select>
+      </form> 
+      
+      <p class="centrado"><button id="boton6" type="button" onclick="datosSel('forma2', 'coche');">¿Qué coche tengo?</button></p>
+      
+      <h3>Ejemplos de input a destajo</h3>
+      <form id="forma3" name="forma3" action="htmlBasico1.html" target="_blank" onsubmit="revisarForma(this);">
+        Sube una foto o un vídeo (requerido): <input type="file" accept="video/*,image/*" required /><br />
+        A ver un botoncito:  <input type="button" name="boton juanito" value="volando voy" /><br /><br />
+        <fieldset name="seleccion" title="controles de selección">
+          <legend>controles de selección</legend>
+          <fieldset name="checkboxes" title="checkboxes: elige tus pokémon (0 ó más)">
+            <legend>checkboxes: elige tus pokémon (0 ó más)</legend>
+            <input type="checkbox" name="pokemon" checked value="pikachu">Tengo un picachu<br />
+            <input type="checkbox" name="pokemon" value="charmander">Tengo un charmander<br />
+            <input type="checkbox" name="pokemon" value="squirtle">Tengo un squirtle<br />
+            <input type="checkbox" name="pokemon" value="bullbasur">Tengo un bullbasur<br />
+          </fieldset>
+          
+          <fieldset name="radios" title="radios: elige tu pokémon (sólo uno, y obligatorio)">
+            <legend>checkboxes: elige tu pokémo (sólo uno, y obligatorio)</legend>
+            <input type="radio" name="pokemon" value="pikachu">Tengo un picachu<br />
+            <input type="radio" name="pokemon" value="charmander">Tengo un charmander<br />
+            <input type="radio" name="pokemon" value="squirtle">Tengo un squirtle<br />
+            <input type="radio" name="pokemon" checked value="bullbasur">Tengo un bullbasur<br />
+          </fieldset>
+          
+          <br />
+          Elemento "select", tiene varias "option", NO ES UN INPUT pero funciona como tal. Es como un "listbox" o un "dropbox".
+          Si le ponemos el atributo "multiple", se pueden elegir varias opciones con ctrl o shift.<br />
+          <select name="selectPokemon" multiple size="3">
+            <optgroup id="pokemon_calientes" label="pokemon calientes">
+              <option value="pikachu">pikachu</option>
+              <option selected>charmander</option>
+            </optgroup>
+            <optgroup label="pokemon fríos">
+              <option value="squirtle">squirtle</option>
+              <option value="bullbasur">bullbasur</option>
+            </optgroup>
+          </select>
+          <br />
+          Podemos usar <b>cualquier control input normalito con una lista de valores predefinidos, comportándose como un dropbox.</b>
+          Además podemos habilitar "autocomplete", esto se hace creando un "datalist" y poniéndole su id en el atributo "list"
+          del input.<br />
+          <input type="text" name="listaPokemon" size="10" maxlength="12" list="listaPokemon" autocomplete="on" />
+          <datalist id="listaPokemon">
+            <option selected value="pikachu">
+            <option value="charmander">
+            <option value="squirtle">
+            <option value="bullbasur">
+          </datalist>
+          Nota: no se puede usar "datalist" para meter dentro controles "input", sólo se usa para meter 
+          elementos "option" en "list".<br />
+        </fieldset>
+        <br />
+        
+        <fieldset name="datospersonales" title="inputs de datos personales">
+          <legend>inputs de datos personales</legend>
+          Escribe tu email: <input type="email" name="correo" class="focusVerde" size="30" maxlength="30"
+          title="debe tener '@' y extensión .com, .es, .org, etc" /><br />
+          Escribe tu teléfono: <input type="tel" name="telefono" size="9" maxlength="9" title="debe tener 9 dígitos" /><br />
+          Escribe la dirección de tu web: <input type="url" name="dirweb" size="30" maxlength="30" 
+          title="debe ser una dirección web válida, como www.ejemplo.com/" />
+        </fieldset>
+        
+        input tipo hidden: <input type="hidden" name="inputEscondido" value="vakita" /><br />
+        input tipo color: <input type="color" name="colorin" title="escribe un color" /><br />
+        input tipo number: <input type="number" name="numero" min="0" max="25" step="3" title="escribe un número del 0 al 25" /><br />
+        input tipo password disabled: <input type="password" name="passd" size="10" maxlength="20" 
+        title="escribe una contraseña, como máximo de 20 caracteres" disabled="disabled" /><br />
+        input tipo password readonly: <input type="password" name="passr" size="10" maxlength="20" 
+        title="escribe una contraseña, como máximo de 20 caracteres" readonly="readonly" /><br />
+        input tipo range: <input type="range" name="rango" min="0" max="25" title="escribe un número del 0 al 25" /><br />
+        input tipo text: es muy versátil, si usamos "pattern": 
+        <input type="text" name="txt1" size="20" maxlength="40" 
+        title="n texto de hasta 40 caracteres, sólo números o letras" /><br />
+        textarea: no es un elemento de nombre "input", pero se comporta como un input tipo text de varias líneas;<br /> 
+        "textarea", "fieldset", "legend", "select", "optgroup", "option", "buton", "imput" son tags que se pueden usar 
+        dentro del tag "form" y también en otros lugares.<br />
+        <textarea title="escribe una histotia" name="areatexto" rows="3" cols="20">
+          Yo tenía un animal que no existía y algunas veces se sentía mal por ello.
+        </textarea><br />
+        El elemento "button" también se usa en el tag "form" sin ser un elemento input:<br />
+        <button type="button" name="boton1forma" value="un botoncito baby XD">Buenos días caraja</button><br />
+        
+        <fieldset name="temporales" title="inputs temporales: date, time, etc">
+          <legend>inputs temporales (date, time, etc)</legend>
+          input tipo date: <input type="date" name="fecha" min="2000-01-01" max="2014-12-31" /><br />
+          input tipo datetime: <input type="datetime" name="fechahora" min="2000-01-01T00:00:00+01:00" 
+          max="2014-12-31T00:00:00+01:00" /><br />
+          input tipo datetime-local (sólo lectura): 
+          <input type="datetime-local" name="fechahoralocal" min="2000-01-01T00:00" max="2014-12-31T00:00:00" readonly /><br />
+          input tipo time (requerido): <input type="time" name="hora" min="00:00:00" max="23:59:59" step="20" required /><br />
+          input tipo month: <input type="month" name="mes" min="2000-01" max="2014-12" /><br />
+          input tipo week: <input type="week" name="semana" min="2000-W01" max="2014-W52" step="3" /><br />
+        </fieldset>
+        
+        <fieldset name="envios" title="inputs para enviar los datos de la forma">
+          <legend>inputs para enviar los datos de la forma</legend>
+          input tipo submit: envía los datos: <input type="submit" name="enviar" formenctype="text/plain" formmethod="POST" 
+          formaction="datos.txt" formtarget="blank" value="enviar datos" /><br />
+          input tipo reset: resetea los campos a como estaban al principio: <input type="reset" name="borrar" 
+                                                                                   value="borrar datos" /><br />
+          lo mismo pero con elementos "button": <button type="submit" name="enviarboton" formenctype="text/plain" 
+          formmethod="POST" formaction="datos.txt" formtarget="blank" value="enviar datos" >enviar datos</button><br />
+          <button type="reset" name="borrarboton" value="borrar datos">borrar datos</button><br />
+          input tipo image: Éste sí que tiene más propiedades que ninguno:
+          <input type="image" name="imagenenviar" src="archivos/chise.jpg" alt="¡chise, sálvame!" height="60" width="90" 
+          formenctype="text/plain" formmethod="POST" formaction="datos.txt" formtarget="_self" />
+        </fieldset>
+        Ahora realmente me gustaría usar unas funciones de JavaScript para aprender a tomar los datos de los controles...
+      </form>
+    </div>
+    
+    <!--===============================================================================================================-->
+    
+    <div class="nyu">
+      <h1>Cosa derecha</h1>
+      <p>Una abreviatura: la <abbr title="Organización Mundial de la Salud">OMS</abbr> fue fundada algún año.</p>
+      <address> 
+        Una dirección: Autor: <a href="mailto:nash.makineta@gmail.com">nash makineta</a>.<br />
+        Visítame en:<br />
+        Calle San Isidro, 22<br />
+        <abbr title="Código Postal">CP</abbr>: 09001<br />
+        Burgos (Burgos), España.
+      </address>
+      <article>
+        <h1>Un artículo, como de prensa y tal...</h1>
+        <p>El anime es malo para las personas que toman drogas, ya que puede hacerles pensar que la vida es bonita....</p>
+      </article>
+      <p>El tag "aside" se usa para poner textos laterales en los artículos, como las columnas del periódico y tal:</p>
+      <aside>
+        <h3>Columna lateral sobre los pokémon</h3>
+        <p>Empezaron siendo tan pocos que hasta parecía gracioso. Pero con el paso de los años invadieron tu mundo, te devoraron 
+        el cerebro... Sí, esos seres con cara de inocentes te están comiendo las ideas para que seas pasto de sus crías...</p>
+      </aside>
+      <p>El tag "audio" reproduce un sonido:</p>
+      <audio controls="controls"> <!-- puajj no tengo controles de audio?? T.T -->
+        <source src="archivos/01%20-%20Kakko%20Warui%20I%20love%20you!.mp3" type="audio/mp3">
+        Tu navegador no soporta los elementos de audio, deberías actualizarlo... XP
+      </audio>
+      <p>el tag "bdi" se usa para poner palabras en idiomas con otros caracteres como hebreo, árabe, japonés,... Para que el texto 
+      no se vuelva loco. Pero sólo funciona en Chrome y Firefox, así que no es una buena opción universal.</p>
+      <p>uso: yo qué sé no traga dentro del tag "p" de todos modos no es universal...</p>
+      <p>Tag "bdo": Cambia el sentido del texto:</p>
+      <p>Uso: <bdo dir="rtl">Este texto se ve de derecha a izquerda XD</bdo></p>
+      <p>Tag "blockquote", para poner un texto citado de otra fuente:</p>
+      <blockquote cite="http://kronos.mcanime.net">
+        Mi perro volaba por los cielos con sus orejas de muérdago era valiente y arriesgado y mordía el cielo.
+      </blockquote>
+      <p>Tag "canvas": Para dibujar gráficos en ejecución, con javascript. Ejemplo:</p>
+      <canvas id="myCanvas">Your browser does not support the HTML5 canvas tag.</canvas>
+
+      <script>
+        var c=document.getElementById('myCanvas');
+        var ctx=c.getContext('2d');
+        ctx.fillStyle='#FF0000';
+        ctx.fillRect(0,0,80,100);
+      </script>
+      <p>Aunque parece que no todos los navegadores soportan las funciones que usa.</p>
+      <p>Tag "cite": En HTML5 define el título de una obra, en HTML 4.01, en cambio, una cita de otra fuente o algo así. Uso:</p>
+      <p><cite>Alas y Cadenas</cite>, por nash_makineta</p>
+      <p>Unos tags de formato de texto (<b>em, strong, dfn, code, samp, kbd, var</b>:</p>
+      <p>
+        <em>Emphasized text</em>
+        <strong>Strong text</strong>
+        <dfn>Definition term</dfn>
+        <code>A piece of computer code</code>
+        <samp>Sample output from a computer program</samp>
+        <kbd>Keyboard input</kbd>
+        <var>Variable</var>
+      </p>
+      <p>Uso del famoso tag "col" dentro de "colgroup":</p>
+      <table border="1">
+        <colgroup>
+          <col span="2" style="background-color:red"> <!-- se usa para darles estilos y cosas de esas a cada columna por separado -->
+          <col style="background-color:yellow"> <!-- de este modo no hay que dar estilo a cada celda, ya se da a toda la columna -->
+        </colgroup>
+        <tr>
+          <th>ISBN</th>
+          <th>Title</th>
+          <th>Price</th>
+        </tr>
+        <tr>
+          <td>3476896</td>
+          <td>My first HTML</td>
+          <td>$53</td>
+        </tr>
+      </table>
+      <p>Como vemos, se usa "colgroup", y dentro de él "col", para aplicar estilos y ese tipo de cosas a cada columna 
+        por separado. Aunque con "span" podemos afectar a varias columnas con el mismo formanto.
+      </p>
+      <p>Tag "command": Define un botón de comnado que el usuario puede invocar. Sólo funciona en IE9, no es compatible.</p>
+      <p>
+        Tag "datalist": Define una lista de opciones predefinida para un control "input". Cuando escribimos manualmente 
+        la opción hace autocompletar. No soportado en IE ni en Safari. Ejemplo:
+      </p>
+      <form>
+        <input list="navegadores" name="navegador">
+        <datalist id="navegadores">
+          <option value="Internet Explorer">
+          <option value="Firefox">
+          <option value="Chrome">
+          <option value="Opera"> 
+          <option value="Safari">
+        </datalist>
+        <input type="submit" name="enviar">
+      </form>
+      <p>
+        Tags "del"/"ins": Se usa para reemplazar texto. "del" tacha el texto viejo e "ins" subraya el nuevo: <br />
+        mi perro es <del>azul</del> <ins>verde</ins>.
+      </p>
+      <p>Tag "details": Define detalles adicionales que el usuario puede ver o esconder, sólo funciona en Chrome y Safari.</p>
+      <p>
+        Tag "embed": Define un contenedor para una aplicación externa (no HTML, como una animación en flash, etc), 
+        o de algún plugin.<br />
+        Ejemplo:
+      </p>
+      <embed src="archivos/Garrafas9.2.jar" />
+      <p>Tag "fieldset": Agrupa varios controles "input" de un "form" que están relacionados entre sí. Ejemplo:</p>
+      <form>
+        <fieldset>
+          <legend>Datos personales:</legend> <!-- esto simplemente es la leyenda que se pone en la "caja", como el título o así -->
+          Nombre: <input type="text" /><br />
+          Email: <input type="text" /><br />
+          Fecha de nacimiento: <input type="text" />
+        </fieldset>
+      </form>
+      <p>Tag "figure": Se usa para marcar una foto en un documento. Tiene una caption "figcaption". Ejemplo:</p>
+      <figure>
+        <img src="archivos/Violadores.png" alt="Criatura jesulínica"
+             width="200" height="200">
+        <figcaption>Figura 1. - Criatura "Violadores", diseñada por un depravado vocacional</figcaption>
+      </figure>
+      <p>Tag "footer": Define el pie de un documento o sección del mismo. Ejemplo:</p>
+      <footer>
+        <p>Autor: yo, porque molo</p>
+        <p><time pubdate datetime="2012-09-25"></time></p>
+      </footer>
+      <p>Tag "header": Define una cabecera para un documento o sección del mismo. Ejemplo:</p>
+      <article>
+        <header>
+          <h3>Cabecera del artículo ("article")</h3>
+          <p><time pubdate datetime="2011-03-21"></time></p>  
+        </header>
+        <p>En este artículo vamos a hablar sobre las plumas irreflexivas que me pongo de paracaídas...</p>
+      </article>
+      <p>Tag "hgroup": Agrupa elementos de cabecera (h1,h2, etc). Ejemplo:</p>
+      <hgroup>
+        <h1>Bienvenido a la fiesta de las cabeceras, yo soy la mamá</h1>
+        <h2>Mamá no presumas tanto que eres una irresponsable...</h2>
+      </hgroup>
+      
+      <p>
+        Más atributos del tag "iframe": Atributos no soportados en HTML5 (pero se entiende que sí en HTML 4.01): "align",
+        "frameborder", "longdesc" (url que tiene una descripción larga del contenido del "iframe"), "marginheight", "marginwidth",
+        "scrolling". <br />
+        Los que sí funcionan en HTML5: "sandbox" (restricciones para el contenido en el iframe), "seamless" (para que
+        parezca que el "iframe" es una parte del documento que contiene o algo así), "srcdoc" (como "src", pero en vez de tomar un 
+        archivo, toma directamente código HTML).  Pero srcdoc no lo soporta ni un pobre navegador. FAIL!!
+      </p>
+      
+      <p>
+        Tags "input": Esto ha cambiado un montón ahora con HTML5, tiene un montón de atributos nuevos, ponemos todos:
+      </p>
+      <ul>
+        <li>"accept": Tipos de archivos que el servidor acepta. Se usa sólo con type="file".</li>
+        <li>"alt": texto alternativo.</li>
+        <li>"autocomplete": on/off, si se autocompleta el texto en el input o no.</li>
+        <li>"autofocus": si un elemento input debe tomar el foco nada más cargarse la página o no.</li>
+        <li>"checked": Para checkbox y radio, elementos "input" marcados por defecto.</li>
+        <li>"disabled": elemento input desabilitado.</li>
+        <li>"form": define el O LOS formularios a los que pertenece el elemento input.</li>
+        <li>
+          "formaction": url del archivo que procesará el contenido del input al enviarlo 
+          (se usa en inputs de tipo "submit" e "image".
+        </li>
+        <li>"formenctype": cómo se codifica la información para enviarla al servidor.</li>
+        <li>"formmethod": get o post, método HTTP para enviar los datos.</li>
+        <li>"formnovalidate": no validar los elementos para enviarlos.</li>
+        <li>"formtarget": dónde se muestra la respuesta recibida tras enviar la forma.</li>
+        <li>"height": altura de un elemento input tipo "image".</li>
+        <li>"list": id de un elemento "datalist" que tiene opciones predefinidas para un elemento input.</li>
+        <li>"max": Máximo valor admisible en un elemento input, para números o fechas.</li>
+        <li>"maxlength": Máxima longitud permitida en caracteres.</li>
+        <li>"min": Mínimo valor admisible, para números o fechas.</li>
+        <li>"multiple": Si se pueden meter varios valores en un elemento input.</li>
+        <li>"name": nombre del elemento input.</li>
+        <li>"pattern": expresión regular que debe cumplir la entrada del input.</li>
+        <li>"placeholder": pista corta sobre el valor esperado en el elemento input.</li>
+        <li>"readonly": input de sólo lectura.</li>
+        <li>"required": input que hay que rellenar obligatoriamente antes de enviar.</li>
+        <li>"size": ancho en caracteres del input.</li>
+        <li>"src": url de la imagen para usar como botón "submit", sólo en type "image".</li>
+        <li>"step": intervalos de números permitidos en un input.</li>
+        <li>
+          "type": tipo de elemento input:
+          <ul>
+            <li>button</li>
+            <li>checkbox</li>
+            <li>color</li>
+            <li>date</li>
+            <li>datetime</li>
+            <li>datetime-local</li>
+            <li>email</li>
+            <li>file</li>
+            <li>hidden</li>
+            <li>image</li>
+            <li>month</li>
+            <li>number</li>
+            <li>password</li>
+            <li>radio</li>
+            <li>range</li>
+            <li>reset</li>
+            <li>search</li>
+            <li>submit</li>
+            <li>tel</li>
+            <li>text</li>
+            <li>time</li>
+            <li>url</li>
+            <li>week</li>
+          </ul>
+        </li>
+        <li>"value": valor de un elemento input.</li>
+        <li>"width": ancho de un elemento input, solo para type="image".</li>
+      </ul>
+      
+      <h1>Aparte de esos atributos, que son los específicos del elemento "input", están los atributos globales que soportan todos
+      o casi todos los elementos o tags y los atributos de eventos.</h1>
+      <h1>Esto de escribir todos los atributos de un elemento lo hago para perder el tiempo porque a veces no puedo evitar estar
+      un poquito atontadillo XDDD</h1>
+      <p>Tag "keygen": Define un generador de pares de claves para las formas. Cuando se manda la forma, la clave privada se 
+        almacena localmente, mientras que la clave pública se envía al servidor.<br /> 
+        Uso: &lt;keygen name="nombre clave" keytype="tipo clave"&gt;
+      </p>
+      <p>
+        Tag "label": para poner una etiqueta a un elemento "input". Por ejemplo, en los botones radio, sirve para poner
+        una etiqueta o nombre antes del botón, en lugar de después. Tienen la ventaja que también se puede clicar en la etiqueta
+        en lugar sólo en el control input. Ejemplo: 
+      </p>
+      <form>
+        Elija su sexo:<br />
+        <label for="hombre">Hombre</label>
+        <input type="radio" name="sexo" id="hombre" value="hombre"><br>
+        <label for="mujer">Mujer</label>
+        <input type="radio" name="sexo" id="mujer" value="mujer"><br>
+        <input type="submit" value="Mandar datos">
+      </form>
+      <p>Tag "mark": Texto marcado. Ejemplo: no olvides comprar <mark>leche entera</mark> hoy.</p>
+      <p>Tag "menu": Define un menú, pero no funciona ni en un pobre navegador.</p>
+      <p>Tag "meta": ahora tiene un atributo nuevo: charset se usa como charset="UTF-8" o lo que sea.</p>
+      <p>Tag "meter": Define una escala de medida con su rngo, pero sólo funciona en Chrome y Opera así que nada.</p>
+      <p>Tag "nav": Define una sección de links de navegación, como una especie de menú con enlaces principales o algo así.
+      <br />ejemplo:<br /></p>
+      <nav>
+        <a href="ejemplo_div.html" target="iframe2">Ejemplo div</a> |
+        <a href="htmlBasico1.html" target="_self">HTML básico</a> |
+        <a href="pruebasCSS.html" target="_blank">Pruebas con CSS</a>
+      </nav>
+      <p>Nótese que los elementos "a" van dentro del elemento "nav" y no necesitan ser englobados por un "p" ni nada.</p>
+      <p>
+        Tag "noframes": No soportado en HTML5. Define un contenido alternativo para casos en que no se soporten ls frames.
+        Ese contenido se mete entre los tags "noframes" y listo.
+      </p>
+      <p>
+        Idem, pero éste sí soportado en HTML5. Contenido alternativo para usuarios que no soportan scripts en su navegador o los
+        tienen deshabilitados.
+      </p>
+      <p>
+        Tag "object": define un objeto embeded o incrustado en el documento HTML, tal como audio, video, flash, pdf,... 
+        también se puede incrustar otra página en esa. No sé cuál es su diferencia con el tag "embed". Cuando se trate de una imagen,
+        tiene un atributo "usemap"= nombre del mapa para usar el mapa en dicha imagen. Ejemplo:
+      </p>
+      <object width="400" height="400" style="backface-visibility: hidden; background-image: url('archivos/chise.jpg');" 
+      data="archivos/01%20-%20Kakko%20Warui%20I%20love%20you!.mp3">
+        <param name="autoplay" value="true">
+      </object>
+      <p>No me funciona la imagen de fondo puaf esto es muy raro... ŽŽ</p>
+      <p>Tag "output": representa el resultado de un cálculo, como por ejemplo uno hecho con un script. Ejemplo:</p>
+      <form oninput="x.value=parseInt(a.value)+parseInt(b.value)">
+        <input type="range" id="a" value="50">
+        +<input type="number" id="b" value="50">
+        =<output id="x" for="a b"></output>
+      </form>
+      <p>Tag "param": Define parámetros para el contenido incrustado con un tag "object".</p>
+      <p>
+        Tag "pre": Sirve para mostrar un texto con su formato explícito, es decir, se muestran todos los espacios y saltos de línea
+        a diferencia de "p". Ejemplo:<br />
+      </p>
+      <pre>
+        Mi perro no tiene rabo y yo me pregunto
+alegremente por qué ocurre eso 
+somos felices como las puñeteras lombrices  mira que tabulaciones te meto
+baby XD
+      </pre>
+      <p>Tag progress: Representa el progreso de una tarea. No funcione en IE ni en Safari. Ejemplo con 22% fijo:</p>
+      Progreso de descarga: <progress value="22" max="100"></progress>
+      <p>
+        Tag "q": Representa una cita corta ("quotation"): <q>yo no vuelo entre semana, pero como pimientos de mi amigo Sen</q>
+        dinosaurio...
+      </p>
+      <p>
+        Tag "rp": Se usa dentro del tag "ruby", y dice qué es lo que se debe mostrar en caso de que el navegador no soporte 
+        las anotaciones "ruby".
+      </p>
+      <p>
+        Tag "rt": Se usa dentro del tag "ruby", y explica el significado o pronunciación de los caracteres.
+      </p>
+      <p>
+        Tag "ruby": Define una anotación ruby, la cual se usa para tipografía asiática, para mostrar su pronunciación, etc.<br /> 
+        Ejemplo:
+      </p>
+      <ruby>
+        ? <rp>??`</rp>
+        <rt>mierda</rt> <!-- huy no se ven los kanjis mamaaaaaaaa tasuketeeeeee XD -->
+      </ruby>
+      <p>
+        Tag "s": Para marcar texto que ya no es correcto o relevante. No se usa para definir texto borrado o reemplazado, para eso están "del" e "ins".
+        Ejemplo: <s>Mi casa está rota.</s> Es broma, mi casa sólo está bien jodida.
+      </p>
+      <p>Tag "section": Define una sección en un documento, como capítulos, cabeceras, pies, etc. Ejemplo:</p>
+      <section>
+        <h1>Fiesta de conciencias perdidas</h1>
+        <p>Se encontraron todas las alegres simpatías de las personas desconocidas y mutaron a su prindolo para invocar esgrimas...</p>
+      </section>
+      <p>Tag "source": se usa en tags de multimedia (como "video" y "audio"), define el contenido fuente con su ubicación.</p>
+      <p>
+        Por ENÉSIMA VEZ, el tag "span": define una sección en un documento o en un trozo de texto, pudiendo aplicar estilo sólo a ese trozo. 
+        Vale para agrupar elementos en línea en un documento. Ejemplo: <span style="color: red;">emergencia llega su madre fulgenciaaaa</span> o algo.
+      </p>
+      <p>Tag "strike": texto tachado. Aunque se supone que no funciona en HTML5. Ejemplo: perro <strike>volador y</strike> saltador.</p>
+      <p>Recordemos los tags "sub" (subíndice) y "sup" (superíndice).</p>
+      <p>
+        Tags especiales para tablas: aparte de "table", "tr", "th" y "td", están los tags "thead", "tbody" y "tfoot". Estos separan sus propias filas
+        delimitando una sección de la tabla. Así le podemos dar estilo por separado a cada uno de esos elementos (thead, tbody, tfoot) y nos queda una tabla
+        bien chula.
+      </p>
+      <p>
+        Tag "time": define fechas y horas. Ejemplo: abrimos a las <time>9:00</time> de la mañana. También se puede definir una fecha:<br />
+        Tengo una fiesta el día <time datetime="2012-10-14">Día del Nacho puto Friki de los Cojones</time>.
+      </p>
+      <p>Tag "track": Define pistas de texto (subtítulos y eso) dentro de los tags de media "audio" y "video". Da igual, no funciona en ningún navegador.</p>
+      <p>Tag "tt": se supone que no funciona en HTML5. Define texto de teletipo: <tt>texto de mi teletipo duro</tt>.</p>
+      <p>Tag "u": texto subrayado: yo <u>subrayo este texto</u> porque tengo vicio yeahhh XD</p>
+      <h3>
+        Algo importante que hay que saber: Algo que está "DEPRECATED" se ha quedado fuera de fecha, sin actualizar; seguramente en un futuro se quitará, 
+        pero se puede usar. En cambio, algo
+        que está "OBSOLETE" ya está fuera del estándar y no se garantiza cómo va a funcionar o si al menos funcionará.
+      </h3>
+      <p>
+        Tag "video": como "audio", define un vídeo con su ancho, alto, controles y archivos fuente. Pero es que no tengo ni idea de cómo se definen 
+        los "controls". Ejemplo chunguete:
+      </p>
+      <video width="320" height="240">
+        <source src="archivos/no%20kasca%20ochate.mpg" type="video/mpeg">
+        Tu navegador no soporta el tag "video" ya puedes llorar majete se jodió el porno XD
+      </video> 
+      <p>Pues vale, no está bien y no funciona. Pero presiento que sería infinitamente más fácil poner el vídeo con el tag "object".</p>
+      <p>
+        Tag "wbr": Define una parte de un texto donde se permite poner un salto de línea. Ejemplo: <wbr>pescadería profesional<wbr> no es lo mismo que 
+        simpatía porcentual. Claro que en esta página no va a funcionar porque tengo algo mal configurado para ello. Puede que sea lo mismo que negrea a
+        mi pobre iframe de ahí debajo.
+      </p>
+      <h2>
+        Aquí termina el resumen con todos los tags "extraños" de HTML. A continuación van los ATRIBUTOS GLOBALES que se aplican generalmente a todos
+        los tags de HTML. Esto es para HTML5.
+      </h2>
+      <ul>
+        <li>"accesskey": tecla que activa o da el foco a ese elemento.</li>
+        <li>"class": clase o clases de CSS a las que pertenece el elemento.</li>
+        <li>"contenteditable": si es "true", el contenido del elemento es editable, y si es "false", no.</li>
+        <li>"contextmenu": define el menú que aparece al hacer click derecho sobre el elemento. Da igual, no funciona en ningún navegador.</li>
+        <li>"dir": dirección del texto en el contenido del elemento, "rtl" o "ltr".</li>
+        <li>"dropzone": dice qué es lo que se debe hacer con un elemento arrastrado dropeado sobre nuestro elemento (copy, etc). No funciona en ninguno.</li>
+        <li>"hidden": el elemento se esconde porque no es relevante ahora mismo o lo que sea. No funciona en IE.</li>
+        <li>"id": La identificación unívoca de ese elemento.</li>
+        <li>"lang": lenguaje del contenido del elemento. Se usa como lang="fr".</li>
+        <li>"spellcheck": si "true", se revisa la gramática y palabras de su contenido. Sólo funciona en Chrome y Safari Xp</li>
+        <li>"style": estilo en línea para el elemento, de toda la vida.</li>
+        <li>"tabindex": número de orden del elemento cuando nos desplazamos entre distintos elementos con la tecla "tab".</li>
+        <li>"title": información extra o "hint" sobre el elemento, que se muestra cuando ponemos el puntero del ratón sobre el elemento.</li>   
+      </ul>
+      <p>
+        Están también los eventos globales que sirven para todo tipo de elementos y luego los específicos para cada tipo, pero parte están en otro
+        documento y además me rayas tú y la chula de tu vieja la cangreja.
+      </p>
+      <h3>
+        Este iframe de debajo debería correr hacia los lados ya que la página es más ancha que la ventana donde se muestra. Pero si lo piensas friamente,
+        en realidad siempre se ha estado adaptando a la ventana en que se mostraba. Para que eso no ocurra debe haber algo en style o por otro sitio que aún
+        no he tocado bien...
+      </h3>
+      <iframe id="iframe2" name="iframe2" src="pruebasCSS.html"></iframe>
+    </div>
+  </body>
+</html>
